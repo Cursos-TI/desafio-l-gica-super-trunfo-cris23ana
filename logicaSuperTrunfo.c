@@ -26,6 +26,8 @@ int main() {
     float area2, densidadepop2, pib2, pibpercapita2;
 //super poder
     float superpoder1, superpoder2;
+//resultado da escolha para comparação
+    int escolha;
 
 //Instruções para a inserção de dados no cadastro
     printf("\n");
@@ -121,42 +123,72 @@ int main() {
 
     printf("######### COMPARAÇÃO DAS DUAS CARTAS #########\n");
     printf("\n");
+    printf("Escolha um dos atributos a seguir para comparar entre duas cartas e decidir quem é o vencedor.\n");
     printf("OBSERVAÇÕES:\n");
     printf("A propriedade de densidade populacional será considerada vencedora quando tiver o menor valor.\n");
     printf("As outras propriedades vencerão quando tiverem o maior valor.\n");
     printf("\n");
+    printf("1. População.\n");
+    printf("2. Área.\n");
+    printf("3. PIB.\n");
+    printf("4. Número de Pontos Turísticos.\n");
+    printf("Sua escolha: ");
+    scanf("%d", &escolha);
 
-    printf("Tipo de comparação: População.\n");
-    printf("Primeira Cidade: %s - Estado: %c, Código: %s, População: %d \n", cidade, estado, codigocarta, populacao);
-    printf("Segunda Cidade: %s - Estado: %c, Código: %s, População: %d \n ", cidade2, estado2, codigocarta2, populacao2);
-    if(populacao > populacao2)
+    //comparação usando o switch
+    switch(escolha)
     {
-    printf("A População da primeira Cidade é maior do que a da segunda Cidade. A primeira Carta venceu!\n");
-    } else {
-    printf("A População da segunda Cidade é maior do que a da primeira Cidade. A segunda Carta venceu!\n");
-    }
-    /*
-    Código de comparação entre as áreas e densidades populacionais das duas cartas para mais testes
+        case 1:
+        printf("Tipo de comparação: População.\n");
+        printf("Primeira Cidade: %s - Estado: %c, Código: %s, População: %d \n", cidade, estado, codigocarta, populacao);
+        printf("Segunda Cidade: %s - Estado: %c, Código: %s, População: %d \n ", cidade2, estado2, codigocarta2, populacao2);
+        if(populacao > populacao2)
+        {
+        printf("A População da primeira Cidade é maior do que a da segunda Cidade. A primeira Carta venceu!\n");
+        } else {
+        printf("A População da segunda Cidade é maior do que a da primeira Cidade. A segunda Carta venceu!\n");
+        }
+        break;
 
-    printf("Tipo de comparação: Área.\n");
-    printf("Primeira Cidade: %s - Estado: %c, Código: %s, Área: %.2f \n", cidade, estado, codigocarta, area);
-    printf("Segunda Cidade: %s - Estado: %c, Código: %s, Área: %.2f \n ", cidade2, estado2, codigocarta2, area2);
-    if(area > area2)
-    {
-    printf("A Área da primeira Cidade é maior do que a da segunda Cidade. A primeira Carta venceu!\n");
-    } else {
-    printf("A Área da segunda Cidade é maior do que a da primeira Cidade. A segunda Carta venceu!\n");
+        case 2:
+        printf("Tipo de comparação: Área.\n");
+        printf("Primeira Cidade: %s - Estado: %c, Código: %s, Área: %.2f \n", cidade, estado, codigocarta, area);
+        printf("Segunda Cidade: %s - Estado: %c, Código: %s, Área: %.2f \n ", cidade2, estado2, codigocarta2, area2);
+        if(area > area2)
+        {
+        printf("A Área da primeira Cidade é maior do que a da segunda Cidade. A primeira Carta venceu!\n");
+        } else {
+        printf("A Área da segunda Cidade é maior do que a da primeira Cidade. A segunda Carta venceu!\n");
+        }
+        break;
+
+        case 3:
+        printf("Tipo de comparação: PIB.\n");
+        printf("Primeira Cidade: %s - Estado: %c, Código: %s, PIB: %.2f \n", cidade, estado, codigocarta, pib);
+        printf("Segunda Cidade: %s - Estado: %c, Código: %s, PIB: %.2f \n ", cidade2, estado2, codigocarta2, pib2);
+        if(pib > pib2)
+        {
+        printf("O PIB da primeira Cidade é maior do que o da segunda Cidade. A primeira Carta venceu!\n");
+        } else {
+        printf("O PIB da segunda Cidade é maior do que o da primeira Cidade. A segunda Carta venceu!\n");
+        }
+        break;
+
+        case 4:
+        printf("Tipo de comparação: Pontos Turísticos..\n");
+        printf("Primeira Cidade: %s - Estado: %c, Código: %s, Pontos Turísticos.: %d \n", cidade, estado, codigocarta, pontosturisticos);
+        printf("Segunda Cidade: %s - Estado: %c, Código: %s, Pontos Turísticos.: %d \n ", cidade2, estado2, codigocarta2, pontosturisticos2);
+        if(pib > pib2)
+        {
+        printf("O número de Pontos Turísticos da primeira Cidade é maior do que o da segunda Cidade. A primeira Carta venceu!\n");
+        } else {
+        printf("O número de Pontos Turísticos da segunda Cidade é maior do que a da primeira Cidade. A segunda Carta venceu!\n");
+        }
+        break;
+
+        default:
+        printf("Opção Inválida. Tente novamente.\n");
     }
-    printf("Tipo de comparação: Densidade populacional.\n");
-    printf("Primeira Cidade: %s - Estado: %c, Código: %s, Densidade populacional: %.2f \n", cidade, estado, codigocarta, densidadepop);
-    printf("Segunda Cidade: %s - Estado: %c, Código: %s, Densidade populacional: %.2f \n ", cidade2, estado2, codigocarta2, densidadepop2);
-    if(densidadepop < densidadepop2)
-    {
-    printf("A Densidade populacional da primeira Cidade é menor do que a da segunda Cidade. A primeira Carta venceu!\n");
-    } else {
-    printf("A Densidade populacional da segunda Cidade é menor do que a da primeira Cidade. A segunda Carta venceu!\n");
-    }
-    */
 
     return 0;
 }
